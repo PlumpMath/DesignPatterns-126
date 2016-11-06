@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AbstractFactory;
+using AbstractFactory.PepsiFactory;
 
 namespace DesignPatterns
 {
@@ -10,6 +7,9 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            var client = new Client(new PepsiFactory());
+
+            client.Run();
         }
     }
 }
