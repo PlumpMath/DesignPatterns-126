@@ -1,5 +1,8 @@
-﻿using AbstractFactory;
-using AbstractFactory.PepsiFactory;
+﻿
+
+using Builder;
+using Builder.Base;
+using Builder.Buiders;
 
 namespace DesignPatterns
 {
@@ -7,9 +10,13 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            var client = new Client(new PepsiFactory());
+            //var client = new Client(new PepsiFactory());
 
-            client.Run();
+            //client.Run();
+
+            var builder = new ConcretBuilder();
+            var foreman = new Foreman(builder);
+            var home = foreman.Build();
         }
     }
 }
